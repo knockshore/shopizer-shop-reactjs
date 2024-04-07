@@ -8,7 +8,7 @@ import { addToCart } from "../../redux/actions/cartActions";
 // import { addToWishlist } from "../../redux/actions/wishlistActions";
 // import { addToCompare } from "../../redux/actions/compareActions";
 // import Rating from "./sub-components/ProductRating";
-import StarRatings from 'react-star-ratings';
+//import StarRatings from 'react-star-ratings';
 import WebService from '../../util/webService';
 import constant from '../../util/constant';
 import { setLoader } from "../../redux/actions/loaderActions";
