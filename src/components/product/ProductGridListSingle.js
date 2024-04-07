@@ -69,7 +69,7 @@ const ProductGridListSingle = ({
               <div className="pro-same-action pro-cart">
                 <Link to={"/product/" + product.description.friendlyUrl} onClick={() => onClickProductDetails(product.id)} title="Select options">
                 <button>
-                    <span>Détails du produit</span>
+                    <span>{product.description.name}</span>
                 </button>
                </Link>
               </div>
@@ -238,13 +238,44 @@ ProductGridListSingle.propTypes = {
 
 function defaultImage(product) {
   if(product.images && product.images.length > 0) {
-    return product.images[0].imageUrl;
+    return encode(product,product.images[0]);
+    //return product.images[0].imageUrl;
   } else if(product.image != null) {
-    return product.imageUrl;
+    return encode(product,product.image);
+    //return product.imageUrl;
   } else {
     return null;
   }
 }
+
+function encode(product,image) {
+  //console.log(JSON.stringify(product));
+  //console.log("->" + product.sku);
+  //console.log(image.imageName);
+  //console.log('Image is ' + JSON.stringify(image));
+  var body = imagebody("products/DEFAULT/" + product.sku + "/LARGE/" + image.imageName);
+  //console.log(body);
+  var url = JSON.stringify(body);
+  //console.log(url);
+  var encoded = Buffer.from(url).toString('Base64');
+  //console.log(encoded);
+  return "https://d1jarr45y981ou.cloudfront.net/" + encoded;
+}
+
+function imagebody(key) {
+  var img = {}
+  var edits = {};
+  var resize = {};
+  resize.width=300;
+  resize.height=280;
+  resize.fit="cover";
+  edits.resize=resize;
+  img.bucket="perfectogaz";
+  img.key=key;
+  img.edits=edits;
+  return img;
+}
+
 
 const mapStateToProps = state => {
   return {

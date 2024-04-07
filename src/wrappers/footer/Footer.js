@@ -97,12 +97,14 @@ const Footer = ({
                   <li>
                     <Link to={"/contact"}>{strings["Contact"]}</Link>
                   </li>
+                  {/**
                   <li>
                     <Link to={"/login"}>{strings["Login"]}</Link>
                   </li>
                   <li>
                     <Link to={"/register"}>{strings["Register"]}</Link>
                   </li>
+                   */}
                   {/* <li>
                     <Link to={process.env.PUBLIC_URL + "#/"}>Returns</Link>
                   </li>
