@@ -786,8 +786,11 @@
   .single-image {
     img {
       width: 100%;
+      display: block;
+      height: auto;
     }
   }
+
 }
 
 .shop-area {

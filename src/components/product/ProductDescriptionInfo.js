@@ -131,6 +131,7 @@ const ProductDescriptionInfo = ({
       </div>
         */}
       {/* {product.rating && product.rating > 0 ? ( */}
+      {/**
       <div className="pro-details-rating-wrap">
         <div className="pro-details-rating">
           <StarRatings
@@ -141,9 +142,10 @@ const ProductDescriptionInfo = ({
             numberOfStars={5}
             name='view-rating'
           />
-          {/* <Rating ratingValue={product.rating} /> */}
+          <Rating ratingValue={product.rating} />
         </div>
       </div>
+       */}
       {/* ) : (
           ""
         )} */}
