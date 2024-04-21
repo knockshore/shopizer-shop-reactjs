@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import React from "react";
 const HeroSliderStatic = ({ string, pitch1, pitch2, pitch3, sliderText, sliderImage }) => {
   return (
-<div  className="row" 
+<div className="row" 
       style={{
-        backgroundImage: "url(assets/img/slider/fireplace-pic.jpeg)",
+        backgroundImage: "url(assets/img/slider/home-fireplace-2024.webp)",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',

@@ -15,10 +15,11 @@ const HeaderTop = ({
 }) => {
   const [message, setMessage] = useState('')
   useEffect(() => {
-    getContentMessage();
+    //getContentMessage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   /**Home page hero content */
+  /**
   const getContentMessage = async () => {
     let action = constant.ACTION.CONTENT + constant.ACTION.BOXES + constant.ACTION.HEADER_MESSAGE + '?lang=' + currentLanguageCode;
     try {
@@ -30,7 +31,7 @@ const HeaderTop = ({
     } catch (error) {
       console.log("Content error " + error );
     }
-  }
+  }**/
   return (
     <div
       className={`header-top-wap ${

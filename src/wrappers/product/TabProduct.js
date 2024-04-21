@@ -63,8 +63,10 @@ const TabProduct = ({
         } ${extraClass ? extraClass : ""}`}
     >
       <div className={`${containerClass ? containerClass : "container"}`}>
-        <SectionTitle titleText="Featured Products" positionClass="text-center" />
+        {/**<SectionTitle titleText="Featured Products" positionClass="text-center" />**/}
+        
         <Tab.Container defaultActiveKey="all">
+          {/**
           <Nav variant="pills" className="product-tab-list pt-30 pb-55 text-center">
             {
               categoryData.map((value, i) => {
@@ -77,6 +79,7 @@ const TabProduct = ({
               })
             }
           </Nav>
+           */}
           <Tab.Content>
             {
               categoryData.map((value, i) => {
