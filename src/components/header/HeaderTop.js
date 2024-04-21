@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { multilanguage } from "redux-multilanguage";
 import { connect } from "react-redux";
 //import WebService from '../../util/webService';
