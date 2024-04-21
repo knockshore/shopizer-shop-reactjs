@@ -47,10 +47,11 @@ const HeaderTop = ({
         currentLanguageCode={currentLanguageCode}
         dispatch={dispatch}
       />
-      */}
+      
       <div className="header-offer">
         <p dangerouslySetInnerHTML={{ __html: message.replace("]]>", "") }}></p>
       </div>
+      */}
     </div>
   );
 };
