@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { multilanguage } from "redux-multilanguage";
 import { connect } from "react-redux";
-import WebService from '../../util/webService';
-import constant from '../../util/constant';
+//import WebService from '../../util/webService';
+//import constant from '../../util/constant';
 // import { setCurrency } from "../../redux/actions/currencyActions";
 import LanguageCurrencyChanger from "./sub-components/LanguageCurrencyChanger";
 
@@ -13,7 +13,7 @@ const HeaderTop = ({
   dispatch,
   borderStyle
 }) => {
-  const [message, setMessage] = useState('')
+  //const [message, setMessage] = useState('')
   useEffect(() => {
     //getContentMessage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
