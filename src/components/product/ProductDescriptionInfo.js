@@ -56,7 +56,7 @@ const ProductDescriptionInfo = ({
     }
   }
 
-
+  const formUrl = "https://form.perfectogaz.com?product=" + product.description.name;
   const onChangeOptions = async (value, option) => {
 
     let tempSelectedOptions = [];
@@ -373,6 +373,13 @@ const ProductDescriptionInfo = ({
       ) : (
           ""
         )}
+      <div className="pro-details-meta">
+        <span><a href={formUrl} target="_blank">Demande d'informations</a></span>
+        <ul>
+          <li >
+          </li>
+        </ul>
+      </div>
       {/* {product.tag ? (
         <div className="pro-details-meta">
           <span>Tags :</span>
