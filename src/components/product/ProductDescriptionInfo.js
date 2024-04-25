@@ -374,7 +374,7 @@ const ProductDescriptionInfo = ({
           ""
         )}
       <div className="pro-details-meta">
-        <span><a href={formUrl} target="_blank">Demande d'informations</a></span>
+        <span><a href={formUrl} target="_blank" rel="noopener noreferrer">Demande d'informations</a></span>
         <ul>
           <li >
           </li>
