@@ -7,7 +7,7 @@ import { useToasts } from "react-toast-notifications";
 import ProductModal from "./ProductModal";
 import { setProductID } from "../../redux/actions/productActions";
 import { connect } from "react-redux";
-import StarRatings from 'react-star-ratings';
+//import StarRatings from 'react-star-ratings';
 const ProductGridListSingle = ({
   product,
   // currency,
