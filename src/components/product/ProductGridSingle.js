@@ -215,8 +215,8 @@ function imagebody(key) {
   var img = {}
   var edits = {};
   var resize = {};
-  resize.width=300;
-  resize.height=280;
+  resize.width=380;
+  resize.height=480;
   resize.fit="cover";
   edits.resize=resize;
   img.bucket="perfectogaz";

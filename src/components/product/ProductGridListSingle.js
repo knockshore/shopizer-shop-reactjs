@@ -146,6 +146,7 @@ const ProductGridListSingle = ({
                     {product.description.name}
                   </Link>
                 </h3>
+                {/**
                 <div className="product-list-price">
                   {product.discounted ? (
                     <Fragment>
@@ -170,10 +171,12 @@ const ProductGridListSingle = ({
                       numberOfStars={5}
                       name='view-rating'
                     />
-                    {/* <Rating ratingValue={product.rating} /> */}
+                   <Rating ratingValue={product.rating} />
                   </div>
                 </div>
+                 */}
                 <p dangerouslySetInnerHTML={{ __html: product.description.description }}></p>
+                {/**
                 <div className="shop-list-actions d-flex align-items-center">
                   <div className="shop-list-btn btn-hover">
 
@@ -195,11 +198,12 @@ const ProductGridListSingle = ({
                         )
                     }
 
-                    {/* )} */}
                   </div>
+                  
 
 
                 </div>
+                 */}
               </div>
             </div>
           </div>
@@ -266,8 +270,8 @@ function imagebody(key) {
   var img = {}
   var edits = {};
   var resize = {};
-  resize.width=300;
-  resize.height=280;
+  resize.width=400;
+  resize.height=400;
   resize.fit="cover";
   edits.resize=resize;
   img.bucket="perfectogaz";

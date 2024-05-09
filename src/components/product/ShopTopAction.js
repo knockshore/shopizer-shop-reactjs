@@ -35,16 +35,18 @@ const ShopTopAction = ({
             setActiveLayout(e);
           }}
         >
-          <i className="fa fa-th-large" />
+        <i className="fa fa-th-large" />
         </button>
+        {/**
         <button
           onClick={e => {
             getLayout("grid three-column");
             setActiveLayout(e);
           }}
         >
-          <i className="fa fa-th" />
+        <i className="fa fa-th" />
         </button>
+         */}
         <button
           onClick={e => {
             getLayout("list");
