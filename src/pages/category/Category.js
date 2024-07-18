@@ -126,8 +126,17 @@ const Category = ({ setCategoryID, isLoading, strings, location, defaultStore, c
         try {
             let response = await WebService.get(action);
             if (response) {
+                //console.log('Products ' + JSON.stringify(response.products));
+                console.log('Products size ' + response.products.length);
+                let filteredProducts = response.products.filter((product) => {
+                    //console.log('Product ' + JSON.stringify(product));
+                    return product.available===true;
+                });
+                console.log('Filtered products ' + filteredProducts.length);
+                //console.log('Products list ' + JSON.stringify(filteredProducts));
                 setCurrentPage(response.totalPages)
-                setProductData(response.products);
+                //setProductData(response.products);
+                setProductData(filteredProducts);
                 setTotalProduct(response.recordsTotal)
             }
             setLoader(false)
