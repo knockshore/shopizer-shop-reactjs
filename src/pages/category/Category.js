@@ -132,7 +132,7 @@ const Category = ({ setCategoryID, isLoading, strings, location, defaultStore, c
                     //console.log('Product ' + JSON.stringify(product));
                     return product.available===true;
                 });
-                console.log('Filtered products ' + filteredProducts.length);
+                console.log('Filtered products size ' + filteredProducts.length);
                 //console.log('Products list ' + JSON.stringify(filteredProducts));
                 setCurrentPage(response.totalPages)
                 //setProductData(response.products);
