@@ -95,6 +95,7 @@ const ProductImageGallery = ({ product }) => {
                         className="img-fluid"
                         alt=""
                       />
+                      <div class="overlay">{product.description.name}</div>
                     </div>
                   </div>
                 );

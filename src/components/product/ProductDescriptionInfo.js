@@ -8,7 +8,7 @@ import { addToCart } from "../../redux/actions/cartActions";
 // import { addToWishlist } from "../../redux/actions/wishlistActions";
 // import { addToCompare } from "../../redux/actions/compareActions";
 // import Rating from "./sub-components/ProductRating";
-import StarRatings from 'react-star-ratings';
+//import StarRatings from 'react-star-ratings';
 import WebService from '../../util/webService';
 import constant from '../../util/constant';
 import { setLoader } from "../../redux/actions/loaderActions";
@@ -56,7 +56,7 @@ const ProductDescriptionInfo = ({
     }
   }
 
-
+  const formUrl = "https://form.perfectogaz.com?product=" + product.description.name;
   const onChangeOptions = async (value, option) => {
 
     let tempSelectedOptions = [];
@@ -131,6 +131,7 @@ const ProductDescriptionInfo = ({
       </div>
         */}
       {/* {product.rating && product.rating > 0 ? ( */}
+      {/**
       <div className="pro-details-rating-wrap">
         <div className="pro-details-rating">
           <StarRatings
@@ -141,9 +142,10 @@ const ProductDescriptionInfo = ({
             numberOfStars={5}
             name='view-rating'
           />
-          {/* <Rating ratingValue={product.rating} /> */}
+          <Rating ratingValue={product.rating} />
         </div>
       </div>
+       */}
       {/* ) : (
           ""
         )} */}
@@ -371,6 +373,13 @@ const ProductDescriptionInfo = ({
       ) : (
           ""
         )}
+      <div className="pro-details-meta">
+        <span><a href={formUrl} target="_blank" rel="noopener noreferrer">Demande d'informations</a></span>
+        <ul>
+          <li >
+          </li>
+        </ul>
+      </div>
       {/* {product.tag ? (
         <div className="pro-details-meta">
           <span>Tags :</span>

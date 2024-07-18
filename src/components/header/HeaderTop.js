@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { multilanguage } from "redux-multilanguage";
 import { connect } from "react-redux";
-import WebService from '../../util/webService';
-import constant from '../../util/constant';
+//import WebService from '../../util/webService';
+//import constant from '../../util/constant';
 // import { setCurrency } from "../../redux/actions/currencyActions";
 import LanguageCurrencyChanger from "./sub-components/LanguageCurrencyChanger";
 
@@ -13,12 +13,13 @@ const HeaderTop = ({
   dispatch,
   borderStyle
 }) => {
-  const [message, setMessage] = useState('')
+  //const [message, setMessage] = useState('')
   useEffect(() => {
-    getContentMessage();
+    //getContentMessage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   /**Home page hero content */
+  /**
   const getContentMessage = async () => {
     let action = constant.ACTION.CONTENT + constant.ACTION.BOXES + constant.ACTION.HEADER_MESSAGE + '?lang=' + currentLanguageCode;
     try {
@@ -30,7 +31,7 @@ const HeaderTop = ({
     } catch (error) {
       console.log("Content error " + error );
     }
-  }
+  }**/
   return (
     <div
       className={`header-top-wap ${
@@ -46,10 +47,11 @@ const HeaderTop = ({
         currentLanguageCode={currentLanguageCode}
         dispatch={dispatch}
       />
-      */}
+      
       <div className="header-offer">
         <p dangerouslySetInnerHTML={{ __html: message.replace("]]>", "") }}></p>
       </div>
+      */}
     </div>
   );
 };

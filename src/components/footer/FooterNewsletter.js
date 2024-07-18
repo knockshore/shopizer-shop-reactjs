@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import SubscribeEmail from "./sub-components/SubscribeEmail";
+//import SubscribeEmail from "./sub-components/SubscribeEmail";
 
 const FooterNewsletter = ({
   spaceBottomClass,
@@ -16,14 +16,34 @@ const FooterNewsletter = ({
         sideMenu ? "ml-ntv5" : spaceLeftClass ? spaceLeftClass : ""
         } ${widgetColorClass ? widgetColorClass : ""}`}
     >
+
+              <div className="footer-title">
+                <h3>Suivez-nous</h3>
+              </div>
+              <div className="footer-list">
+                <ul>
+                  <li>
+                    <a
+                      href="//www.facebook.com/perfectogazpropane"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Facebook <i className="fa fa-facebook" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+
+      {/**
       <div className="footer-title">
         <h3>{strings["Subscribe"]}</h3>
       </div>
       <div className={`subscribe-style ${colorClass ? colorClass : ""}`}>
         <p>{strings["Get E-mail updates about our latest shop and special offers."]}</p>
-        {/* subscribe email */}
         <SubscribeEmail mailchimpUrl="//xyz.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef" strings={strings} />
       </div>
+       */}
     </div>
   );
 };

@@ -67,12 +67,15 @@ const ProductDescriptionTab = ({ strings, spaceBottomClass, product, review, use
                 </Nav.Link>
               </Nav.Item> */}
               <Nav.Item>
-                <Nav.Link eventKey="productDescription">{strings["Description"]}</Nav.Link>
+                <Nav.Link eventKey="productDescription">{strings["Specs"]}</Nav.Link>
               </Nav.Item>
+              {/**
               <Nav.Item>
                 <Nav.Link eventKey="productReviews">{strings["Reviews"]}({review.length})</Nav.Link>
               </Nav.Item>
-            </Nav>
+              **/}
+              </Nav>
+              
             <Tab.Content className="description-review-bottom">
               {/* <Tab.Pane eventKey="additionalInfo">
                 <div className="product-anotherinfo-wrapper">
@@ -90,7 +93,7 @@ const ProductDescriptionTab = ({ strings, spaceBottomClass, product, review, use
                 </div>
               </Tab.Pane> */}
               <Tab.Pane eventKey="productDescription">
-                <p dangerouslySetInnerHTML={{ __html: product.description.description }}></p>
+                {/**<p dangerouslySetInnerHTML={{ __html: product.description.description }}></p>**/}
                 <div className="product-anotherinfo-wrapper">
                   <ul>
                     {

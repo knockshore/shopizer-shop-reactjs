@@ -7,7 +7,7 @@ import { useToasts } from "react-toast-notifications";
 import ProductModal from "./ProductModal";
 import { setProductID } from "../../redux/actions/productActions";
 import { connect } from "react-redux";
-import StarRatings from 'react-star-ratings';
+//import StarRatings from 'react-star-ratings';
 const ProductGridListSingle = ({
   product,
   // currency,
@@ -69,7 +69,7 @@ const ProductGridListSingle = ({
               <div className="pro-same-action pro-cart">
                 <Link to={"/product/" + product.description.friendlyUrl} onClick={() => onClickProductDetails(product.id)} title="Select options">
                 <button>
-                    <span>Détails du produit</span>
+                    <span>{product.description.name}</span>
                 </button>
                </Link>
               </div>
@@ -146,6 +146,7 @@ const ProductGridListSingle = ({
                     {product.description.name}
                   </Link>
                 </h3>
+                {/**
                 <div className="product-list-price">
                   {product.discounted ? (
                     <Fragment>
@@ -170,10 +171,12 @@ const ProductGridListSingle = ({
                       numberOfStars={5}
                       name='view-rating'
                     />
-                    {/* <Rating ratingValue={product.rating} /> */}
+                   <Rating ratingValue={product.rating} />
                   </div>
                 </div>
+                 */}
                 <p dangerouslySetInnerHTML={{ __html: product.description.description }}></p>
+                {/**
                 <div className="shop-list-actions d-flex align-items-center">
                   <div className="shop-list-btn btn-hover">
 
@@ -195,11 +198,12 @@ const ProductGridListSingle = ({
                         )
                     }
 
-                    {/* )} */}
                   </div>
+                  
 
 
                 </div>
+                 */}
               </div>
             </div>
           </div>
@@ -238,13 +242,44 @@ ProductGridListSingle.propTypes = {
 
 function defaultImage(product) {
   if(product.images && product.images.length > 0) {
-    return product.images[0].imageUrl;
+    return encode(product,product.images[0]);
+    //return product.images[0].imageUrl;
   } else if(product.image != null) {
-    return product.imageUrl;
+    return encode(product,product.image);
+    //return product.imageUrl;
   } else {
     return null;
   }
 }
+
+function encode(product,image) {
+  //console.log(JSON.stringify(product));
+  //console.log("->" + product.sku);
+  //console.log(image.imageName);
+  //console.log('Image is ' + JSON.stringify(image));
+  var body = imagebody("products/DEFAULT/" + product.sku + "/LARGE/" + image.imageName);
+  //console.log(body);
+  var url = JSON.stringify(body);
+  //console.log(url);
+  var encoded = Buffer.from(url).toString('Base64');
+  //console.log(encoded);
+  return "https://d1jarr45y981ou.cloudfront.net/" + encoded;
+}
+
+function imagebody(key) {
+  var img = {}
+  var edits = {};
+  var resize = {};
+  resize.width=400;
+  resize.height=400;
+  resize.fit="cover";
+  edits.resize=resize;
+  img.bucket="perfectogaz";
+  img.key=key;
+  img.edits=edits;
+  return img;
+}
+
 
 const mapStateToProps = state => {
   return {

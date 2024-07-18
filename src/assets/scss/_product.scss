@@ -289,7 +289,7 @@
     margin-top: 10px;
 
     overflow: hidden;
-    height: 300px;
+    height: 400px;
 
     img {
       width: 100%;
@@ -578,7 +578,7 @@
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 32px;
     line-height: 1;
 
     margin: 0 0 0;
@@ -1475,7 +1475,7 @@
           margin-bottom: 0;
         }
 
-        a {}
+
       }
     }
 
@@ -1489,7 +1489,6 @@
 
         input {
           display: inline-block;
-          float: left;
 
           width: 20px;
           height: 20px;
@@ -1647,7 +1646,7 @@
   .product-img {
     position: relative;
 
-    height: 300px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -41,8 +41,6 @@ const ProductGridSingleTwo = ({
         <div
           className={`product-wrap-2 ${spaceBottomClass ? spaceBottomClass : ""} ${colorClass ? colorClass : ""} `}>
 
-
-
           <div className="product-content-2">
             <div className={`title-price-wrap-2 ${titlePriceClass ? titlePriceClass : ""}`}>
               <h3>
@@ -58,10 +56,9 @@ const ProductGridSingleTwo = ({
             
           <div className="product-img">
             <Link to={process.env.PUBLIC_URL + "/product/" + product.description.friendlyUrl} onClick={() => onClickProductDetails(product.id)}>
-                {
-                //product.images.lenth > 0  &&
-                <img src={product.images[0].imageUrl} alt="" />
-                }
+
+                <img src={encode(product,product.images[0])} alt="" />
+
             </Link>
             {/* {
               product.discount || product.new ? (
@@ -199,6 +196,34 @@ const ProductGridSingleTwo = ({
     </Fragment >
   );
 };
+
+function encode(product,image) {
+  //console.log(JSON.stringify(product));
+  //console.log("->" + product.sku);
+  //console.log(image.imageName);
+  //console.log('Image is ' + JSON.stringify(image));
+  var body = imagebody("products/DEFAULT/" + product.sku + "/LARGE/" + image.imageName);
+  //console.log(body);
+  var url = JSON.stringify(body);
+  //console.log(url);
+  var encoded = Buffer.from(url).toString('Base64');
+  //console.log(encoded);
+  return "https://d1jarr45y981ou.cloudfront.net/" + encoded;
+}
+
+function imagebody(key) {
+  var img = {}
+  var edits = {};
+  var resize = {};
+  resize.width=380;
+  resize.height=480;
+  resize.fit="cover";
+  edits.resize=resize;
+  img.bucket="perfectogaz";
+  img.key=key;
+  img.edits=edits;
+  return img;
+}
 
 ProductGridSingleTwo.propTypes = {
   addToCart: PropTypes.func,
