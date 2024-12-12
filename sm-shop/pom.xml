@@ -62,7 +62,8 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
+			<!-- https://stackoverflow.com/questions/77206827/beandefinitionstoreexception-failed-to-parse-configuration -->
+			<!-- <scope>provided</scope> -->
 		</dependency>
 
 		<dependency>
@@ -149,6 +150,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- https://stackoverflow.com/questions/46756533/execution-default-of-spring-boot-maven-plugin-repackage-failed -->
+				<configuration>
+						<mainClass>com.salesmanager.shop.application.ShopApplication</mainClass>
+						<!-- <skip>true</skip> -->
+				</configuration>
 			</plugin>
 		</plugins>
 		<finalName>shopizer</finalName>
